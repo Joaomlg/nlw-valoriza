@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import express from "express";
 
-import { router } from './routes';
+import { router } from "./routes";
 
 import "./database";
 
@@ -13,4 +13,4 @@ app.use(router);
 
 const port = 3000;
 
-app.listen(port, () => console.log('Server is running on localhost:3000'));
+app.listen(port, () => console.log("Server is running on localhost:3000"));

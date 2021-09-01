@@ -9,8 +9,8 @@ export class CreateUsers1630370040211 implements MigrationInterface {
         {name: "name", type: "varchar"},
         {name: "email", type: "varchar"},
         {name: "admin", type: "boolean", default: false},
-        {name: "created_at", type: "boolean", default: "now()"},
-        {name: "updated_at", type: "boolean", default: "now()"}
+        {name: "created_at", type: "timestamp", default: "now()"},
+        {name: "updated_at", type: "timestamp", default: "now()"}
       ]
     }))
   }

@@ -8,6 +8,7 @@ import { CreateComplimentController } from "./controllers/CreateComplimentContro
 import { ListUserReceivedComplimentsController } from "./controllers/ListUserReceivedComplimentsController";
 import { ListUserSentComplimentsController } from "./controllers/ListUserSentComplimentsController";
 import { ListTagsController } from "./controllers/ListTagsController";
+import { ListUsersController } from "./controllers/ListUsersController";
 
 const router = Router();
 
@@ -31,5 +32,8 @@ router.get('/users/compliments/sent', ensureAuthenticated, listUserSentComplimen
 
 const listTagsController = new ListTagsController();
 router.get('/tags', ensureAuthenticated, listTagsController.handle);
+
+const listUsersController = new ListUsersController();
+router.get('/users', ensureAuthenticated, ensureAdmin, listUsersController.handle);
 
 export { router };

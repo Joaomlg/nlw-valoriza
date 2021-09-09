@@ -1,5 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { ComplimentsRepositories } from "../repositories/ComplimentsRepositories";
+import { classToPlain } from "class-transformer";
 
 class ListUserReceivedComplimentsService {
   async execute(user_id: string) {
@@ -12,7 +13,7 @@ class ListUserReceivedComplimentsService {
       relations: ["userSender", "tag"]
     })
 
-    return complimpliments;
+    return classToPlain(complimpliments);
   }
 }
 

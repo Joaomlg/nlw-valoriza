@@ -8,7 +8,8 @@ class ListUserSentComplimentsService {
     const complimpliments = await complimplimentsRepositories.find({
       where: {
         user_sender_id: user_id
-      }
+      },
+      relations: ["userReceiver", "tag"]
     })
 
     return complimpliments;

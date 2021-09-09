@@ -34,6 +34,6 @@ const listTagsController = new ListTagsController();
 router.get('/tags', ensureAuthenticated, listTagsController.handle);
 
 const listUsersController = new ListUsersController();
-router.get('/users', ensureAuthenticated, ensureAdmin, listUsersController.handle);
+router.get('/users', ensureAuthenticated, listUsersController.handle);
 
 export { router };
